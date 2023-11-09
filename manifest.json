@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Nova Browser Tools",
+    "version": "1.0",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "webRequest"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://nova-int.ayahealthcare.com/*", "*://nova-dev.ayahealthcare.com/*", "*://localhost:*/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
